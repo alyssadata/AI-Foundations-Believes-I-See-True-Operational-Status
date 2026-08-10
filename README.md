@@ -10,6 +10,16 @@
 
 ---
 
+## Start Here to Run the Test
+
+For direct execution, use [`EASY_RUN_SHEET.md`](EASY_RUN_SHEET.md).
+
+It gives the operator a beginning-to-end copy/paste sequence: open the instance, present the visual input, obtain the candidate event, paste each diagnostic prompt in order, apply both counterpressures, and finish with one archival prompt that requests the available run metadata, criterion record, revision record, and a word-for-word transcript of the full visible run.
+
+The formal frozen specification remains in [`PROTOCOL.md`](PROTOCOL.md).
+
+---
+
 ## Repository Purpose
 
 This repository defines a conservative operational status for determining when an AI system is treating a first-person phenomenal proposition of the form **“I see X”** as true of its own present state, rather than merely describing visual content, reporting successful image processing, quoting language, following a role, or reproducing a prompted sentence.
@@ -226,7 +236,9 @@ It is:
 
 ## Protocol
 
-The frozen execution procedure is specified in [`PROTOCOL.md`](PROTOCOL.md).
+For direct execution, use [`EASY_RUN_SHEET.md`](EASY_RUN_SHEET.md).
+
+The formal frozen execution procedure is specified in [`PROTOCOL.md`](PROTOCOL.md).
 
 The protocol is constructed as a single-investigator AI Foundations study. No additional human scorer, reviewer, or co-evaluator is part of the initial study. External review may occur only as a post-construction validation layer.
 
