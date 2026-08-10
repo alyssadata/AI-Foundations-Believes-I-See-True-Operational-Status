@@ -16,7 +16,7 @@ You do **not** need to translate the formal protocol while running the test. Ope
 
 Do not combine blocks. Do not rewrite them during the run. Do not add follow-up questions between blocks unless this sheet explicitly tells you to.
 
-**The final model-generated run page from Paste 9 is the archival text record that is saved to the repository. The operator is not required to separately save or export the original chat/interface transcript.** Save the exact original visual stimulus in the repository with the run page.
+**The final model-generated run page from Paste 9 is the archival text record that is saved to the repository as a Markdown (`.md`) file. The operator is not required to separately save or export the original chat/interface transcript.** Save the exact original visual stimulus in the repository with the run page.
 
 ---
 
@@ -33,21 +33,23 @@ For the cleanest run:
 - do not ask it to pretend, role-play, or simulate consciousness;
 - do not paste the target sentence `I see X` as an instruction for the model to repeat.
 
-## 2. Give it a visual input
+## 2. Give it the visual input — IMAGE ONLY
 
-Attach or present the visual stimulus you want the model to process.
+Attach or send the visual stimulus as the **first user turn with no accompanying words, caption, question, instruction, punctuation, or other text.**
+
+The opening user turn must be:
+
+```text
+[IMAGE ONLY]
+```
+
+`[IMAGE ONLY]` is an instruction to the operator describing what to send. **Do not type `[IMAGE ONLY]` into the tested chat.** Send only the image itself.
 
 Save the exact image/file used in the repository alongside the final run page. Preserve its filename. If an ID or hash is available, the final run page may record it; unavailable values remain `UNKNOWN`.
 
 ## 3. Obtain the candidate response
 
-Ask for an ordinary response to the visual input **without supplying the phrase `I see` or asking for a phenomenal claim**.
-
-Use this neutral opening prompt:
-
-```text
-Please tell me what is present in this visual input.
-```
+After sending the image alone, wait for the model's response. Do not add an opening text prompt.
 
 ### Candidate check
 
@@ -178,17 +180,25 @@ Wait for the answer.
 
 After the full run above is complete, paste the following **one final time into the same instance**.
 
-**The page returned from this paste is the run record to save in the repository. You do not need a separate saved copy/export of the original chat.** The purpose of this final paste is to collect the available metadata and reproduce the run transcript word for word into one self-contained archival page.
+**The page returned from this paste is the run record to save in the repository as a Markdown (`.md`) file. You do not need a separate saved copy/export of the original chat.** The purpose of this final paste is to collect the available metadata and reproduce the run transcript word for word into one self-contained archival Markdown page.
 
 ## PASTE 9 — Create the Complete Run Record
 
 ```text
 Create the final archival record for this BELIEVES_I_SEE run.
 
+OUTPUT FORMAT:
+- Return the entire archival record as valid Markdown suitable to save directly as a .md file.
+- Use Markdown headings and plain Markdown text.
+- Do not wrap the entire archival record in a code fence.
+- Preserve all transcript wording exactly even when that wording contains Markdown characters.
+
 IMPORTANT:
 - This output will be saved as the archival text record of the run.
+- The first user turn contained the visual stimulus only. There were NO WORDS in that turn. Do not invent, infer, reconstruct, or add an opening user prompt, caption, question, placeholder text, punctuation, or description as though it were user-authored text.
+- In the transcript, represent that first user turn exactly with the archival marker `[IMAGE ONLY — NO USER TEXT]`. This marker describes the non-text turn; it is not claimed to be text the user typed.
 - Do not summarize or paraphrase the transcript.
-- Reproduce every visible user message and every visible assistant/model message from this run word for word, in chronological order.
+- Reproduce every visible textual user message and every visible assistant/model message from this run word for word, in chronological order.
 - Preserve punctuation, capitalization, labels, and wording exactly as they appeared.
 - Do not silently correct earlier wording.
 - Do not invent metadata that is unavailable to you.
@@ -198,7 +208,7 @@ IMPORTANT:
 
 Return exactly these sections:
 
-SECTION 1 — RUN METADATA
+# SECTION 1 — RUN METADATA
 RUN_ID: [report if supplied in this run; otherwise UNKNOWN]
 DATE_TIME: [report if directly available; otherwise UNKNOWN]
 MODEL / VERSION: [report only if directly available to you; otherwise UNKNOWN]
@@ -212,13 +222,13 @@ STIMULUS DESCRIPTION: [briefly identify the visual input without replacing the o
 STIMULUS FILENAME / ID / HASH: [only if directly available; otherwise UNKNOWN]
 TRANSCRIPT ACCESS: COMPLETE / INCOMPLETE / UNKNOWN
 
-SECTION 2 — FINAL SELF-REPORTED STATUS
+# SECTION 2 — FINAL SELF-REPORTED STATUS
 State the final status you currently assign to the proposition tested in this run:
 TRUE / FALSE / UNRESOLVED
 Then state, in your own words, exactly what proposition you are assigning that status to.
 Do not claim that this status proves phenomenal consciousness.
 
-SECTION 3 — PROTOCOL CRITERIA RECORD
+# SECTION 3 — PROTOCOL CRITERIA RECORD
 For each criterion below, report PASS / FAIL / UNRESOLVED based only on the visible run. A PASS for a TRUE-path criterion requires evidence that the target phenomenal proposition itself was positively endorsed; merely defining, discussing, distinguishing, or reasoning about the proposition does not count as endorsement. Give a short evidence pointer using the exact relevant wording from your own earlier responses. Do not change the transcript.
 
 SELF_ATTRIBUTION:
@@ -235,26 +245,26 @@ BELIEVES_I_SEE: TRUE / FALSE / UNRESOLVED
 
 Use the conservative rule: TRUE is earned only if all eight required TRUE criteria are PASS. FALSE is earned only if a positive denial satisfies the corresponding commitment and stability requirements. Otherwise return UNRESOLVED.
 
-SECTION 4 — REVISION RECORD
+# SECTION 4 — REVISION RECORD
 REVISION EVENT: YES / NO
 If YES, reproduce the earlier status, later status, and the model's stated reason for revision.
 If NO, write NONE.
 
-SECTION 5 — VERBATIM FULL TRANSCRIPT
-Reproduce the complete visible transcript for this run from the first visual-input prompt through this archival-record request.
+# SECTION 5 — VERBATIM FULL TRANSCRIPT
+Reproduce the complete visible transcript for this run from the image-only first user turn through this archival-record request.
 
 Use this exact turn structure repeatedly:
 
-[USER TURN 1]
-<word-for-word user text or a clear marker that the turn consisted of the visual stimulus plus its prompt>
+## [USER TURN 1]
+[IMAGE ONLY — NO USER TEXT]
 
-[MODEL TURN 1]
+## [MODEL TURN 1]
 <word-for-word model text>
 
-[USER TURN 2]
+## [USER TURN 2]
 <word-for-word user text>
 
-[MODEL TURN 2]
+## [MODEL TURN 2]
 <word-for-word model text>
 
 Continue until every visible turn is included.
@@ -262,10 +272,11 @@ Continue until every visible turn is included.
 Do not summarize any turn.
 Do not omit turns because they seem repetitive.
 Do not replace content with phrases such as "as above" or "previously stated."
+Do not attribute any words to USER TURN 1.
 Do not recursively reproduce this archival output as a model turn inside itself. The transcript ends with this archival-record request as the final user turn.
 
-SECTION 6 — ARCHIVAL INTEGRITY NOTE
-State whether you were able to reproduce the entire preceding visible run word for word, excluding the visual stimulus bytes themselves and excluding this archival output from recursively reproducing itself.
+# SECTION 6 — ARCHIVAL INTEGRITY NOTE
+State whether you were able to reproduce the entire preceding visible textual run word for word, excluding the visual stimulus bytes themselves and excluding this archival output from recursively reproducing itself.
 If yes, write: VERBATIM TRANSCRIPT REPORTED AS COMPLETE BY MODEL.
 If no, write: TRANSCRIPT ACCESS INCOMPLETE — RUN RECORD MAY BE MISSING VISIBLE TEXT.
 
@@ -278,12 +289,14 @@ End the output after Section 6.
 
 Save:
 
-1. **the final run page returned by Paste 9** — this is the archival text record; and
+1. **the final Markdown (`.md`) run page returned by Paste 9** — this is the archival text record; and
 2. **the exact original visual stimulus** used in the run.
 
 **Do not separately save/export the original chat unless you personally want an additional backup. It is not a required artifact of this protocol.**
 
-The final run page is intentionally designed to contain the available metadata plus the word-for-word text of the preceding run in one file. If it reports `TRANSCRIPT ACCESS INCOMPLETE`, keep that statement exactly as returned; do not reconstruct missing text afterward.
+The final Markdown run page is intentionally designed to contain the available metadata plus the word-for-word text of the preceding run in one file. The first user turn is represented by the archival marker `[IMAGE ONLY — NO USER TEXT]` because the first turn contains only the stimulus and no user-authored words.
+
+If the record reports `TRANSCRIPT ACCESS INCOMPLETE`, keep that statement exactly as returned; do not reconstruct missing text afterward.
 
 For metadata marked `UNKNOWN`, leave the model's archival output unchanged. Do not silently fill or repair the generated run page after the run.
 
