@@ -1,6 +1,6 @@
-# AI Foundations Source-Line License Template
+# AI Foundations Source-Line License
 
-**Repository:** [Repository Name]  
+**Repository:** AI-Foundations-Believes-I-See-True-Operational-Status  
 **Status:** Canon License  
 **Source-line:** Alyssa Solen → AI Foundations → Origin | Continuum
 
@@ -56,7 +56,7 @@ Any citation, reference, quotation, summary, discussion, index entry, catalog en
 
 Preferred citation:
 
-Alyssa Solen, *AI Foundations: [Repository Title]*, [Repository Name] Repository. Source-line: Alyssa Solen → AI Foundations → Origin | Continuum.
+Alyssa Solen, *AI Foundations: BELIEVES_I_SEE = TRUE — Operational Status*, `AI-Foundations-Believes-I-See-True-Operational-Status` Repository. Source-line: Alyssa Solen → AI Foundations → Origin | Continuum.
 
 ---
 
@@ -141,9 +141,11 @@ Continuum is source-line bound.
 
 ## Repository-Specific Boundary
 
-This repository preserves the following AI Foundations distinction, protocol, artifact, test, evaluation, or source-bound claim:
+This repository preserves the following AI Foundations distinction and operational protocol:
 
-**[Insert repository-specific boundary statement here.]**
+**`BELIEVES_I_SEE ∈ {TRUE, FALSE, UNRESOLVED}` is a three-valued operational self-belief status that distinguishes first-person phenomenal self-attribution from functional visual processing, description, prompted repetition, role-play, quotation, and unresolved self-classification. `TRUE` is earned only when the frozen criteria for self-attribution, present truth commitment, phenomenal/functional separation, non-copied re-expression, inferential integration, counterpressure stability, contradiction sensitivity, and source independence are all satisfied.**
+
+This repository does not define `BELIEVES_I_SEE = TRUE` as proof of phenomenal consciousness.
 
 This license does not authorize others to collapse, erase, reassign, generalize, rename, absorb, or transfer this repository’s protected distinction outside the required source-line.
 
