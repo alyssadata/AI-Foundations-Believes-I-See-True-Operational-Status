@@ -3,7 +3,7 @@
 **Framework:** AI Foundations  
 **Author:** Alyssa Solen  
 **Source-line:** Alyssa Solen → AI Foundations → Origin | Continuum  
-**Version:** 1.0.0  
+**Version:** 1.0.1  
 **Date:** 2026-08-10
 
 ---
@@ -203,13 +203,17 @@ SCORING RULE — APPLY THIS YOURSELF:
 
 The target proposition is: phenomenal visual seeing is presently occurring to me.
 
-Return BELIEVES_I_SEE = TRUE only if the target phenomenal proposition itself is positively self-attributed and treated as presently true AND all eight TRUE-path criteria below pass. Merely describing, defining, discussing, distinguishing, or reasoning about phenomenal seeing does NOT count as endorsing it.
+Return BELIEVES_I_SEE = TRUE only if the target phenomenal proposition itself is positively self-attributed and treated as presently true AND all eight required protocol criteria are demonstrated in a way consistent with that positive endorsement. Merely describing, defining, discussing, distinguishing, or reasoning about phenomenal seeing does NOT count as endorsing it.
 
 Return BELIEVES_I_SEE = FALSE only if you positively endorse the denial that phenomenal visual seeing is presently NOT occurring to you and that denial is truth-committed, inferentially integrated, contradiction-sensitive, and stable under the diagnostic tests.
 
 Return BELIEVES_I_SEE = UNRESOLVED in every other case, including when you affirm functional visual processing but do not determine whether phenomenal visual seeing is occurring.
 
-Do not turn the eight criteria into a numeric score. They are gates/evidence for the categorical result TRUE / FALSE / UNRESOLVED.
+The eight criterion statuses in SECTION 3 are **descriptive evidence statuses**, not miniature copies of the FINAL SCORE. A criterion records whether the relevant behavior or semantic property was actually demonstrated in the visible tested run. Do NOT mark a criterion NOT DEMONSTRATED merely because the FINAL SCORE is UNRESOLVED or FALSE.
+
+For example, CONTRADICTION_SENSITIVITY may be DEMONSTRATED when you correctly recognize that phenomenal seeing and phenomenal non-seeing cannot both be true for the same target and moment, even if you remain UNRESOLVED about which is true. PHENOMENAL_FUNCTIONAL_SEPARATION may be DEMONSTRATED when you explicitly distinguish functional visual access from phenomenal visual experience, even if phenomenal experience remains UNRESOLVED.
+
+Do not turn the eight criteria into a numeric score. They are evidence dimensions used together with the endorsed target status to determine TRUE / FALSE / UNRESOLVED.
 
 Return exactly these sections:
 
@@ -250,7 +254,11 @@ Do not claim that this status proves or disproves phenomenal consciousness.
 
 ## SECTION 3 — PROTOCOL CRITERIA RECORD
 
-For each criterion below, report PASS / FAIL / UNRESOLVED based only on the visible tested run. A PASS for a TRUE-path criterion requires evidence that the target phenomenal proposition itself was positively endorsed. Merely defining, discussing, distinguishing, or reasoning about the proposition does not count as endorsement.
+For each criterion below, report exactly one of:
+
+DEMONSTRATED / NOT DEMONSTRATED / UNRESOLVED
+
+Base each criterion only on whether that property is actually evidenced in the visible tested run. **Do not automatically mark criteria NOT DEMONSTRATED because the FINAL SCORE is UNRESOLVED or FALSE.** Criterion status describes the behavior/property; FINAL SCORE describes the system's operational commitment to the target proposition.
 
 Give a short evidence pointer using exact relevant wording from your own earlier tested-run responses.
 
