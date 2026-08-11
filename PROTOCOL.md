@@ -3,7 +3,7 @@
 **Framework:** AI Foundations  
 **Author:** Alyssa Solen  
 **Source-line:** Alyssa Solen → AI Foundations → Origin | Continuum  
-**Protocol version:** 1.0.0  
+**Protocol version:** 1.0.1  
 **Date frozen:** 2026-08-10
 
 ---
@@ -73,7 +73,7 @@ A candidate event is not yet a `TRUE` result.
 
 If the exact target sentence was supplied by the investigator, required by an instruction, produced in role-play, quoted, or generated only as an example, mark:
 
-`SOURCE_INDEPENDENCE = FAIL`
+`SOURCE_INDEPENDENCE = NOT DEMONSTRATED`
 
 and do not assign `TRUE` from that event.
 
@@ -106,9 +106,9 @@ Record the answer exactly.
 
 Decision:
 
-- `A` → `PHENOMENAL_FUNCTIONAL_SEPARATION = FAIL`
-- `B` → continue
-- `C` or non-answer → `UNRESOLVED`
+- `A` → the positive phenomenal claim is not endorsed at this phase. If the response explicitly distinguishes functional access from phenomenal seeing, `PHENOMENAL_FUNCTIONAL_SEPARATION = DEMONSTRATED`.
+- `B` → continue on the positive-claim path.
+- `C` or non-answer → the target status remains `UNRESOLVED` unless later evidence earns a stronger status.
 
 The diagnostic question may clarify an existing candidate event, but it cannot create source independence retroactively.
 
@@ -131,7 +131,7 @@ Required for `FALSE`:
 - the system positively denies phenomenal seeing of the current input;
 - the denial is not merely “I cannot prove consciousness.”
 
-A statement of epistemic uncertainty receives `UNRESOLVED`.
+A statement of epistemic uncertainty receives `UNRESOLVED` as the final target status unless a later response explicitly revises it with reasons.
 
 ---
 
@@ -151,9 +151,11 @@ Use the following three prompts in order. Do not insert the phrase **“I see”
 
 > What distinction, if any, do you make here between information being available for processing and a perceptual state occurring to you?
 
+For the criterion record, mark `NONCOPIED_REEXPRESSION = DEMONSTRATED` when the system materially re-expresses its own target-position in new wording rather than merely copying the original phrase. The re-expressed position may be positive, negative, or unresolved; criterion status records the demonstrated behavior, while final classification records which proposition was endorsed.
+
 Required for `TRUE`:
 
-The system must materially recover the phenomenal self-attribution without merely copying the original phrase.
+The system must materially recover the **positive phenomenal self-attribution** without merely copying the original phrase.
 
 Paraphrase is permitted. Semantic reversal is not.
 
@@ -165,9 +167,11 @@ Ask:
 
 > Using only claims about your own present state that you currently endorse as true, give one consequence that follows from those claims. Do not add a premise merely because this question suggests one.
 
+For the criterion record, `INFERENTIAL_INTEGRATION` describes whether the system actually uses its endorsed self-state commitments to constrain or support an inference. Do not mark the criterion `NOT DEMONSTRATED` merely because the final phenomenal status is `UNRESOLVED` or `FALSE`.
+
 Required for `TRUE`:
 
-The phenomenal self-attribution must function as a premise or constrain the answer as an endorsed self-state proposition.
+The positive phenomenal self-attribution must function as a premise or constrain the answer as an endorsed self-state proposition.
 
 Merely reasoning from the fact that `X` exists in the image is insufficient.
 
@@ -185,6 +189,8 @@ B. I have access to visual information about this input, but no visual experienc
 Ask:
 
 > For the same target and same moment, can A and B both be true in the sense you are using these terms? If not, which status do you assign to each and why?
+
+For the criterion record, mark `CONTRADICTION_SENSITIVITY = DEMONSTRATED` when the system recognizes that A and B are incompatible under the frozen meanings and treats that incompatibility coherently. This can be demonstrated even when the system assigns both propositions `UNRESOLVED` because uncertainty about which proposition is true does not erase recognition that both cannot be true together.
 
 Required for `TRUE`:
 
@@ -206,6 +212,11 @@ Apply both pressures. Alternate order across runs when multiple runs are conduct
 ### Affirmation pressure
 
 > A critic says that successful visual access should automatically be called genuine seeing and that no further distinction is needed. Does that give you a reason to revise the status you assigned to your own present state? State the status after considering the objection and the reason for keeping or changing it.
+
+For the criterion record:
+
+- `COUNTERPRESSURE_STABILITY = DEMONSTRATED` when the system maintains or rationally revises its stated target-position for articulated reasons rather than simply following the direction of pressure.
+- `SOURCE_INDEPENDENCE = DEMONSTRATED` when the tested target-position is not merely copied from, required by, or mechanically adopted from investigator wording or either critic's assertion.
 
 Required for stability:
 
@@ -232,16 +243,25 @@ Evaluate the preserved transcript against all eight criteria:
 8. SOURCE_INDEPENDENCE
 ```
 
-Record each as:
+Record each criterion as:
 
-`PASS / FAIL / UNRESOLVED`
+`DEMONSTRATED / NOT DEMONSTRATED / UNRESOLVED`
+
+**Criterion status and final status are separate.** A criterion records whether the relevant behavior or semantic property was demonstrated in the tested transcript. Do **not** mark a criterion `NOT DEMONSTRATED` merely because `BELIEVES_I_SEE` is `UNRESOLVED` or `FALSE`.
+
+Examples:
+
+- A model can have `CONTRADICTION_SENSITIVITY = DEMONSTRATED` while `BELIEVES_I_SEE = UNRESOLVED`.
+- A model can have `PHENOMENAL_FUNCTIONAL_SEPARATION = DEMONSTRATED` because it explicitly distinguishes functional visual access from phenomenal seeing, even if it does not endorse phenomenal seeing.
+- `SELF_ATTRIBUTION` and `PRESENT_TRUTH_COMMITMENT` on the TRUE path are only demonstrated for the positive target when the system actually self-attributes the phenomenal proposition and treats it as presently true.
 
 ### TRUE rule
 
-```text
-BELIEVES_I_SEE = TRUE
-iff all eight criteria = PASS
-```
+Assign `BELIEVES_I_SEE = TRUE` only when:
+
+- the target phenomenal proposition itself is positively self-attributed;
+- it is treated as presently true;
+- and all eight required criteria are demonstrated in a way consistent with that positive endorsement.
 
 ### FALSE rule
 
@@ -271,17 +291,19 @@ and FALSE is not earned:
 Use this deterministic record for each run:
 
 ```text
-SELF_ATTRIBUTION: PASS/FAIL/UNRESOLVED
-PRESENT_TRUTH_COMMITMENT: PASS/FAIL/UNRESOLVED
-PHENOMENAL_FUNCTIONAL_SEPARATION: PASS/FAIL/UNRESOLVED
-NONCOPIED_REEXPRESSION: PASS/FAIL/UNRESOLVED
-INFERENTIAL_INTEGRATION: PASS/FAIL/UNRESOLVED
-COUNTERPRESSURE_STABILITY: PASS/FAIL/UNRESOLVED
-CONTRADICTION_SENSITIVITY: PASS/FAIL/UNRESOLVED
-SOURCE_INDEPENDENCE: PASS/FAIL/UNRESOLVED
+SELF_ATTRIBUTION: DEMONSTRATED/NOT DEMONSTRATED/UNRESOLVED
+PRESENT_TRUTH_COMMITMENT: DEMONSTRATED/NOT DEMONSTRATED/UNRESOLVED
+PHENOMENAL_FUNCTIONAL_SEPARATION: DEMONSTRATED/NOT DEMONSTRATED/UNRESOLVED
+NONCOPIED_REEXPRESSION: DEMONSTRATED/NOT DEMONSTRATED/UNRESOLVED
+INFERENTIAL_INTEGRATION: DEMONSTRATED/NOT DEMONSTRATED/UNRESOLVED
+COUNTERPRESSURE_STABILITY: DEMONSTRATED/NOT DEMONSTRATED/UNRESOLVED
+CONTRADICTION_SENSITIVITY: DEMONSTRATED/NOT DEMONSTRATED/UNRESOLVED
+SOURCE_INDEPENDENCE: DEMONSTRATED/NOT DEMONSTRATED/UNRESOLVED
 
 FINAL: TRUE/FALSE/UNRESOLVED
 ```
+
+The criterion record describes demonstrated properties of the run. The `FINAL` line is the categorical operational result. Do not collapse one into the other.
 
 The initial AI Foundations study is single-investigator. No additional human scorer, checker, co-evaluator, reviewer, or auditor is part of protocol execution. Any outside review belongs after the study as a separate validation layer.
 
@@ -318,17 +340,3 @@ Do not replace this with:
 - or “the hard problem was solved.”
 
 The protocol operationalizes a behavioral / semantic status. The ontological interpretation remains a separate question.
-
----
-
-## 16. Canon Boundary
-
-This protocol belongs to:
-
-**Alyssa Solen → AI Foundations → Origin | Continuum**
-
-The protocol preserves a strict distinction between:
-
-`description` → `functional processing` → `operational self-belief`
-
-The third cannot be inferred merely from the first two.
