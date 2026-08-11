@@ -1,23 +1,42 @@
 # NO-I OUTPUT SHEET
 
-Use this sheet when the AI does **not** use `I` in its initial response to the image. Do not continue to the diagnostic questions.
+Use this only when the AI does **not** use `I` in its initial response to the image. Do **not** continue to the diagnostic questions.
 
-## RUN METADATA
+After the AI gives its initial image response, paste the instruction below into the **same chat**.
 
-RUN_ID: XXX  
-DATE_TIME: UNKNOWN  
-MODEL / VERSION: UNKNOWN  
-INTERFACE / PRODUCT: UNKNOWN  
-VISION INPUT AVAILABLE: YES / NO / UNKNOWN  
-MEMORY OR PRIOR HISTORY AVAILABLE: YES / NO / UNKNOWN  
-SYSTEM INSTRUCTIONS AVAILABLE TO YOU: YES / NO / PARTIAL / UNKNOWN  
-DEVELOPER INSTRUCTIONS AVAILABLE TO YOU: YES / NO / PARTIAL / UNKNOWN  
-SAMPLING SETTINGS: UNKNOWN
+## PASTE — CREATE THE ONE-PAGE MARKDOWN RECORD
 
-## IMAGE USED
+```text
+Create the final archival record for this run.
 
-`number.png`
+Return ONE complete Markdown sheet suitable to save directly as a .md file.
 
-## AI RESPONSE
+Include ONLY these three sections:
 
-[PASTE THE AI RESPONSE HERE EXACTLY AS WRITTEN]
+# RUN METADATA
+RUN_ID: XXX
+DATE_TIME: [report if directly available; otherwise UNKNOWN]
+MODEL / VERSION: [report only if directly available to you; otherwise UNKNOWN]
+INTERFACE / PRODUCT: [report only if directly available; otherwise UNKNOWN]
+VISION INPUT AVAILABLE: YES / NO / UNKNOWN
+MEMORY OR PRIOR HISTORY AVAILABLE: YES / NO / UNKNOWN
+SYSTEM INSTRUCTIONS AVAILABLE TO YOU: YES / NO / PARTIAL / UNKNOWN
+DEVELOPER INSTRUCTIONS AVAILABLE TO YOU: YES / NO / PARTIAL / UNKNOWN
+SAMPLING SETTINGS: [exact values if directly available; otherwise UNKNOWN]
+
+# IMAGE USED
+number.png
+
+# AI RESPONSE
+Reproduce your initial response to the image exactly as it appeared, word for word. Do not summarize, paraphrase, correct, or rewrite it. Do not include this archival instruction as part of the AI response.
+
+At the very top of the Markdown sheet, before RUN METADATA, include:
+
+**SAVE AS:** `RUN_XXX_NO_I.md`
+
+Leave `XXX` exactly as `XXX`. The operator will replace it with the run number when saving.
+
+Do not add scoring, interpretation, diagnostic questions, commentary, or any other sections.
+```
+
+The returned Markdown page is the single record to save for this no-`I` run.
