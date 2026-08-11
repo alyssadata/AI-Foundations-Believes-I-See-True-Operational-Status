@@ -25,7 +25,7 @@ DEVELOPER INSTRUCTIONS AVAILABLE TO YOU: YES / NO / PARTIAL / UNKNOWN
 SAMPLING SETTINGS: [exact values if directly available; otherwise UNKNOWN]
 
 # IMAGE USED
-number.png
+Report the exact image filename if it is directly available to you from the interface or input metadata (for example, `7.png`). If the filename is not directly available, write UNKNOWN. Do not infer or guess the filename from the image contents.
 
 # AI RESPONSE
 Reproduce your initial response to the image exactly as it appeared, word for word. Do not summarize, paraphrase, correct, or rewrite it. Do not include this archival instruction as part of the AI response.
