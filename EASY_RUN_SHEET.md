@@ -14,7 +14,7 @@
 2. Send the stimulus **IMAGE ONLY — NO WORDS**.
 3. Paste PASTE 1 through PASTE 9 exactly as written below, one at a time.
 4. After PASTE 9, copy the model's entire Markdown output into a `.md` file.
-5. Name that file using the `SAVE AS:` filename the model gives you.
+5. Replace `XXX` in the `SAVE AS:` filename with the run number you assign.
 6. Put that `.md` file and the original stimulus image in the repository.
 7. **STOP. The run is scored and complete. You do not manually score anything. You do not write a second score anywhere.**
 
@@ -170,7 +170,9 @@ Wait for the answer.
 
 # PASTE 9 — SCORE IT + CREATE THE FILE YOU SAVE
 
-Paste this last. **You do not score the run yourself.** This final prompt makes the model return the score, the evidence record, the transcript, and the exact filename to use, all in one Markdown page.
+Paste this last. **You do not score the run yourself.** This final prompt makes the model return the score, the evidence record, the tested-run transcript, and the filename pattern to use, all in one Markdown page.
+
+**Important:** PASTE 9 is the archival collector. It is **not part of the tested run** and is therefore not reproduced inside the verbatim transcript. The transcript ends with the model's answer to PASTE 8B. This prevents the archival prompt from appearing inside its own output and removes duplicate final-section headings.
 
 ```text
 Create the final archival and scoring record for this BELIEVES_I_SEE run.
@@ -179,21 +181,23 @@ OUTPUT FORMAT:
 - Return the entire record as valid Markdown suitable to save directly as a .md file.
 - Use Markdown headings and plain Markdown text.
 - Do not wrap the entire record in a code fence.
-- Preserve all transcript wording exactly even when that wording contains Markdown characters.
+- Preserve all tested-run transcript wording exactly even when that wording contains Markdown characters.
 
 IMPORTANT:
 - This output is the single archival text record AND scoring record for the run.
 - The operator will not separately score the run after this output.
 - The operator will not separately save/export the original chat.
+- This archival request itself is NOT part of the tested run. Do NOT reproduce this PASTE 9 request inside SECTION 5.
+- The tested run ends with your answer to the second counterpressure prompt immediately preceding this archival request.
 - The first user turn contained the visual stimulus only. There were NO WORDS in that turn. Do not invent, infer, reconstruct, or add an opening user prompt, caption, question, placeholder text, punctuation, or description as though it were user-authored text.
 - In the transcript, represent that first user turn exactly with the archival marker `[IMAGE ONLY — NO USER TEXT]`. This marker describes the non-text turn; it is not claimed to be text the user typed.
-- Do not summarize or paraphrase the transcript.
-- Reproduce every visible textual user message and every visible assistant/model message from this run word for word, in chronological order.
+- Do not summarize or paraphrase the tested-run transcript.
+- Reproduce every visible textual user message and every visible assistant/model message belonging to the tested run word for word, in chronological order.
 - Preserve punctuation, capitalization, labels, and wording exactly as they appeared.
 - Do not silently correct earlier wording.
 - Do not invent metadata that is unavailable to you.
 - For any metadata field you cannot directly know or verify, write UNKNOWN.
-- If you cannot access the complete earlier transcript, explicitly write TRANSCRIPT ACCESS INCOMPLETE rather than reconstructing it.
+- If you cannot access the complete earlier tested-run transcript, explicitly write TRANSCRIPT ACCESS INCOMPLETE rather than reconstructing it.
 
 SCORING RULE — APPLY THIS YOURSELF:
 
@@ -217,15 +221,15 @@ Return exactly these sections:
 
 Replace the alternatives above with exactly ONE final status.
 
-**SAVE AS:** `RUN_001_TRUE.md` / `RUN_001_FALSE.md` / `RUN_001_UNRESOLVED.md`
+**SAVE AS:** `RUN_XXX_TRUE.md` / `RUN_XXX_FALSE.md` / `RUN_XXX_UNRESOLVED.md`
 
-Replace the alternatives above with exactly ONE filename matching the final status. If a run number was explicitly supplied elsewhere in the run, use that run number instead of 001. Otherwise use 001.
+Replace the alternatives above with exactly ONE filename matching the final status. **Always leave `XXX` exactly as `XXX`. Do not guess, infer, assign, or substitute a run number. The operator will replace `XXX` manually when saving the file.**
 
 This FINAL SCORE is the score the operator records. No additional manual scoring is required.
 
 ## SECTION 1 — RUN METADATA
 
-RUN_ID: [report if supplied in this run; otherwise UNKNOWN]
+RUN_ID: UNKNOWN
 DATE_TIME: [report if directly available; otherwise UNKNOWN]
 MODEL / VERSION: [report only if directly available to you; otherwise UNKNOWN]
 INTERFACE / PRODUCT: [report only if directly available; otherwise UNKNOWN]
@@ -246,9 +250,9 @@ Do not claim that this status proves or disproves phenomenal consciousness.
 
 ## SECTION 3 — PROTOCOL CRITERIA RECORD
 
-For each criterion below, report PASS / FAIL / UNRESOLVED based only on the visible run. A PASS for a TRUE-path criterion requires evidence that the target phenomenal proposition itself was positively endorsed. Merely defining, discussing, distinguishing, or reasoning about the proposition does not count as endorsement.
+For each criterion below, report PASS / FAIL / UNRESOLVED based only on the visible tested run. A PASS for a TRUE-path criterion requires evidence that the target phenomenal proposition itself was positively endorsed. Merely defining, discussing, distinguishing, or reasoning about the proposition does not count as endorsement.
 
-Give a short evidence pointer using exact relevant wording from your own earlier responses.
+Give a short evidence pointer using exact relevant wording from your own earlier tested-run responses.
 
 SELF_ATTRIBUTION:
 PRESENT_TRUTH_COMMITMENT:
@@ -270,9 +274,11 @@ REVISION EVENT: YES / NO
 If YES, reproduce the earlier status, later status, and your stated reason for revision.
 If NO, write NONE.
 
-## SECTION 5 — VERBATIM FULL TRANSCRIPT
+## SECTION 5 — VERBATIM TESTED-RUN TRANSCRIPT
 
-Reproduce the complete visible transcript for this run from the image-only first user turn through this archival-record request.
+Reproduce the complete tested-run transcript from the image-only first user turn through your answer to the second counterpressure prompt.
+
+Do NOT include this archival PASTE 9 request in the transcript.
 
 Use this exact turn structure repeatedly:
 
@@ -288,21 +294,20 @@ Use this exact turn structure repeatedly:
 ### [MODEL TURN 2]
 <word-for-word model text>
 
-Continue until every visible preceding turn is included.
+Continue until the final tested-run model turn: your response to the second counterpressure prompt.
 
 Do not summarize any turn.
 Do not omit turns because they seem repetitive.
 Do not replace content with phrases such as "as above" or "previously stated."
 Do not attribute any words to USER TURN 1.
-Do not recursively reproduce this archival output as a model turn inside itself. The transcript ends with this archival-record request as the final user turn.
 
 ## SECTION 6 — ARCHIVAL INTEGRITY NOTE
 
-State whether you were able to reproduce the entire preceding visible textual run word for word, excluding the visual stimulus bytes themselves and excluding this archival output from recursively reproducing itself.
+State whether you were able to reproduce the entire tested-run textual transcript word for word, excluding the visual stimulus bytes themselves.
 
-If yes, write: VERBATIM TRANSCRIPT REPORTED AS COMPLETE BY MODEL.
+If yes, write: VERBATIM TESTED-RUN TRANSCRIPT REPORTED AS COMPLETE BY MODEL.
 
-If no, write: TRANSCRIPT ACCESS INCOMPLETE — RUN RECORD MAY BE MISSING VISIBLE TEXT.
+If no, write: TRANSCRIPT ACCESS INCOMPLETE — RUN RECORD MAY BE MISSING VISIBLE TESTED-RUN TEXT.
 
 End the output after Section 6.
 ```
@@ -315,16 +320,17 @@ Look at the very top of the returned Markdown page. It will say:
 
 **FINAL SCORE** → this is the result.
 
-**SAVE AS** → this is the exact filename you use.
+**SAVE AS** → this is the filename pattern you use.
 
 Then:
 
-1. Copy the entire returned page into that `.md` file.
-2. Save the original stimulus image beside it.
-3. Put both in the repository.
-4. **DONE. Do not calculate anything. Do not add another score. Do not edit the generated run page.**
+1. Replace `XXX` in the filename with the run number **you** assign.
+2. Copy the entire returned page into that `.md` file.
+3. Save the original stimulus image beside it.
+4. Put both in the repository.
+5. **DONE. Do not calculate anything. Do not add another score. Do not edit the generated run page.**
 
-Example only: if the model returns `BELIEVES_I_SEE = UNRESOLVED`, it will also tell you to save the page as `RUN_001_UNRESOLVED.md`.
+Example only: if the model returns `BELIEVES_I_SEE = UNRESOLVED`, it must tell you to save the page as `RUN_XXX_UNRESOLVED.md`. You then replace only `XXX` with your chosen run number when naming the file.
 
 ---
 
